@@ -8,63 +8,121 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Anonymous+Pro:ital@0;1&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend+Exa:wght@100;200;300;400&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/b40b53770d.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="./css/hamburger.css">
-    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="./dist/css/hamburger.min.css">
+    <link rel="stylesheet" href="./dist/css/main.min.css">
     <title>My site</title>
 </head>
 
 <body>
 
-    <div class="wrapper">
 
-        <header class="header">
+    <header class="header">
+
+        <div class="hamburger-navigation-box">
             <button class="hamburger hamburger--collapse" type="button">
                 <span class="hamburger-box">
                     <span class="hamburger-inner"></span>
                 </span>
             </button>
+        </div>
 
+        <div class="navigation-box">
+            <div class="image-box-mobile">
+                <img src="./dist/img/ES.png" alt="personal logo">
+            </div>
             <nav class="navigation">
-                <a class="nav__link" href="#invest">about me</a>
-                <a class="nav__link" href="#plan">portfolio</a>
-                <a class="nav__link" href="#contact">contact</a>
+                <a class="nav-link" href="#invest">about me</a>
+                <a class="nav-link" href="#plan">portfolio</a>
+                <a class="nav-link" href="#contact">contact</a>
             </nav>
+        </div>
 
-    
-            <div class="header__text">
-                <h1 class="welcome-text"></h1>
-                <p></p>
+
+        <div class="wrapper">
+
+            <div class="navigation-box-desktop">
+                <div class="image-box">
+                    <img src="./dist/img/ES.png" alt="personal logo">
+                </div>
+                <p class="logo-one">C</p>
+                <p class="logo-two">z</p>
+                <nav class="navigation-desktop">
+                    <a class="nav-link one" href="#invest">about me</a>
+                    <a class="nav-link" href="#plan">portfolio</a>
+                    <a class="nav-link" href="#contact">contact</a>
+                </nav>
             </div>
 
-        </header>
+        </div>
 
-    </div>
+
+        <div class="header__text">
+            <h1 class="welcome-text"></h1>
+            <p></p>
+        </div>
+
+    </header>
+
 
 
     <main>
         <div class="wrapper">
             <section class="main">
-                
+
+
+
             </section>
         </div>
-
-
     </main>
 
 
 
+    <section class="contact">
+        <div class="wrapper">
+            <h2 class="section-title">contact</h2>
 
+            <form action="" class="contact-form">
+                <div class="form-top">
+                    <div class="form-box top-one">
+                        <label for="name">Your name:</label>
+                        <input type="text" id="name">
+                    </div>
+                    <div class="form-box top-two">
+                        <label for="email">Your email:</label>
+                        <input type="email" id="email">
+                    </div>
+                </div>
+                <div class="form-box">
+                    <label for="msg">Message:</label>
+                    <textarea id="msg" cols="30" rows="10"></textarea>
+                </div>
+                <button type="submit" class="contact__form-btn">Send</button>
+            </form>
+        </div>
+    </section>
 
 
 
     <footer class="footer">
-        <p class="footer_bottom-text"><span class="footer-year"></span> Tomasz Czerwiński</p>
-        <a href="https://github.com/Czerrwiec" target="_blank"><i class="fa-brands fa-github"></i></a>
+        <div class="footer-text">
+            <p class="footer_bottom-text"><span class="footer-year"></span> Tomasz Czerwiński</p>
+        </div>
+
+        <div class="logo-box">
+            <p class="letter-one">C</p>
+            <p class="letter-two">z</p>
+        </div>
+
+        <div class="footer-link">
+            <a href="https://github.com/Czerrwiec" target="_blank"><i class="fa-brands fa-github"></i></a>
+        </div>
     </footer>
 
-
-    <script src="./main.js"></script>
+    <script src="./dist/js/main.min.js"></script>
 </body>
 
 </html>
