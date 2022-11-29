@@ -14,7 +14,6 @@ html {
 }
 
 body {
-	// font-family: 'Lexend Exa';
 	font-family: 'Anonymous Pro', monospace;
 	font-size: 1.6rem;
 	color: #fff;
@@ -30,10 +29,14 @@ body {
 header {
 	background-color: $secondary;
 	border-bottom: 1px solid $main;
+	position: sticky;
+	top: 0;
+	z-index: 10;
 
 	.hamburger-navigation-box {
 		position: relative;
 		display: none;
+
 		.hamburger {
 			position: absolute;
 			top: 3em;
@@ -56,8 +59,19 @@ header {
 		}
 	}
 
+	.image-box-mobile {
+		img {
+			display: none;
+			position: absolute;
+			height: 60px;
+			right: 0;
+			margin: 0.6em 1em;
+			opacity: 0.77;
+		}
+	}
+
 	.navigation {
-		position: absolute;
+		position: fixed;
 		top: 0;
 		left: 0;
 		right: 0;
@@ -103,7 +117,7 @@ header {
 			padding-right: 1em;
 
 			.one {
-				&::after{
+				&::after {
 					left: -1px;
 				}
 			}
@@ -114,7 +128,7 @@ header {
 				font-size: 2rem;
 				text-decoration: none;
 				color: $main;
-				
+
 				&::after {
 					content: '';
 					position: absolute;
@@ -127,11 +141,11 @@ header {
 					transform-origin: right;
 					transition: transform 0.35s;
 				}
-				
+
 				&:hover::after {
 					transform: scaleX(1);
 					transform-origin: left;
-				}		
+				}
 			}
 		}
 
@@ -161,10 +175,166 @@ header {
 	}
 }
 
-.main {
-	height: 80vh;
-	background-color: $secondary;
+.welcome {
+	height: 100vh;
+	display: flex;
+	align-items: center;
+
+	.welcome-box {
+		margin-bottom: 10em;
+		display: flex;
+		// align-items: center;
+		// justify-content: space-between;
+
+		.welcome-text {
+			color: #4a4e69;
+			font-size: 2.2rem;
+			margin-left: 5em;
+			letter-spacing: 0.06em;
+			h1 {
+				margin-bottom: 0.2em;
+			}
+			hr {
+				margin-top: 0.1em;
+			}
+		}
+	}
+
+	.arrow-box {
+		display: block;
+		position: absolute;
+		bottom: 3rem;
+		left: 50%;
+		padding: 0.8em;
+		transform: translateX(-50%);
+		border: 1px solid $main;
+		border-radius: 50%;
+
+		&::before {
+			position: absolute;
+			top: 0;
+			left: 0;
+			content: '';
+			width: 100%;
+			height: 100%;
+			border: 1px solid $main;
+			border-radius: 50%;
+			animation: pulse 2s infinite linear;
+		}
+		.arrow-img {
+			width: 60px;
+		}
+	}
 }
+
+@keyframes pulse {
+	from {
+		transform: scale(1);
+		opacity: 1;
+	}
+
+	to {
+		transform: scale(1.5);
+		opacity: 0;
+	}
+}
+
+.aboutme {
+	height: 100vh;
+}
+
+.contact {
+	h2 {
+		margin-bottom: 2em;
+		color: #4a4e69;
+		font-weight: normal;
+		text-align: center;
+		font-size: 3rem;
+	}
+	.contact-form {
+		margin: 1em 8em;
+		display: flex;
+		flex-direction: column;
+
+		.form-top {
+			display: flex;
+			justify-content: center;
+
+			.top-one {
+				width: 100%;
+				padding-right: 1em;
+			}
+			.top-two {
+				padding-left: 1em;
+				width: 100%;
+			}
+		}
+
+		.form-box {
+			color: #4a4e69;
+			label {
+				display: block;
+				margin-bottom: 0.5em;
+				font-size: 1.8rem;
+			}
+			textarea {
+				max-width: 100%;
+				width: 100%;
+				min-width: 100%;
+			}
+			input,
+			textarea {
+				padding: 0.5em 0.5em;
+				margin-bottom: 2em;
+				width: 100%;
+				color: $main;
+				font-size: 1.6rem;
+				background: none;
+				border: 1px solid $main;
+
+				&:focus {
+					outline: none;
+					border: 2px solid $main;
+				}
+			}
+		}
+		button {
+			position: relative;
+			align-self: center;
+			margin-bottom: 1em;
+			padding: .9em 2.1em;
+			border: 1px solid $main;
+			background: none;
+			font-weight: bold;
+			color: $main;
+			overflow: hidden;
+			cursor: pointer;
+			transition: background-color 0.5s, color 0.5s;
+			&:hover {
+				color: $secondary;
+				background-color: $main;
+			}
+		}
+	}
+}
+
+.circle {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    background-color: $secondary;
+    border-radius: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    animation: zoom .5s
+}
+
+@keyframes zoom {
+    to {
+        transform: translate(-50%, -50%) scale(2);
+        opacity: 0;
+    }
+}
+
 
 footer {
 	color: #f2e9e4;
@@ -175,29 +345,50 @@ footer {
 	background-color: #4a4e69;
 
 	a {
+		padding: 0.5em;
 		text-decoration: none;
 		color: #f2e9e4;
 		transition: color 0.4s;
-
-		&:visited {
+		flex-sel &:visited {
 			color: inherit;
 		}
 
 		&:hover {
 			color: #c9ada7;
 		}
+		i {
+			margin-top: 0.5em;
+			font-size: 3rem;
+		}
 	}
+}
 
-	i {
-		margin-top: 0.5em;
+.logo-box {
+	position: relative;
+	font-family: 'Lexend Exa';
+	font-weight: 200;
+	color: $secondary;
+
+	.letter-one {
+		position: absolute;
+		font-size: 4rem;
+	}
+	.letter-two {
+		position: absolute;
+		left: 10px;
+		top: 4.5px;
 		font-size: 3rem;
 	}
 }
 
 // >>>>>> MEDIA >>>>>>
 
+
 @media (max-width: 768px) {
 	header {
+		position: sticky;
+		top: 0;
+		height: 82px;
 
 		.hamburger-navigation-box {
 			display: block;
@@ -205,6 +396,45 @@ footer {
 
 		.navigation-box-desktop {
 			display: none;
+		}
+		.image-box-mobile {
+			img {
+				display: block;
+			}
+		}
+	}
+
+	.welcome {
+		
+		.welcome-box {
+			margin-bottom: 10em;
+			
+			.welcome-text {
+				font-size: 1.8rem;
+				margin-left: 1em;
+			}
+		}
+	}
+
+	.contact {
+		.contact-form {
+			margin: 1em 1em;
+			// padding: 1em 10em;
+			display: flex;
+			flex-direction: column;
+
+			.form-top {
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+
+				.top-one {
+					padding: 0;
+				}
+				.top-two {
+					padding: 0;
+				}
+			}
 		}
 	}
 }

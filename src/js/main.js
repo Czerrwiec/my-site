@@ -3,6 +3,7 @@ const navBtn = document.querySelector('.hamburger');
 const links = document.querySelectorAll('.nav-link')
 const hamburger = document.querySelector('.hamburger-inner')
 const footerYear = document.querySelector('.footer-year')
+const formBtn = document.querySelector('.form-btn')
 
 
 
@@ -21,13 +22,31 @@ const handleNav = () => {
     // })
 }
 
+
+const addPulseAnimation = (e) => {
+    const top = e.clientY
+    const left = e.clientX
+
+    const btnTopPosition = top - e.target.getBoundingClientRect().top
+    const btnLeftPosition = left - e.target.offsetLeft 
+    
+    const circle = document.createElement('span')
+    circle.classList.add('circle')
+
+    e.target.appendChild(circle)
+    circle.style.top = btnTopPosition +'px'
+    circle.style.left = btnLeftPosition + 'px'
+}
+
+
 const handleCurrentYear = () => {
     const year = (new Date).getFullYear();
     footerYear.innerText = year;
 }
 
 
-
 navBtn.addEventListener('click', handleNav)
+formBtn.addEventListener('click', addPulseAnimation)
+
 
 handleCurrentYear()

@@ -35,8 +35,8 @@
                 <img src="./dist/img/ES.png" alt="personal logo">
             </div>
             <nav class="navigation">
-                <a class="nav-link" href="#invest">about me</a>
-                <a class="nav-link" href="#plan">portfolio</a>
+                <a class="nav-link" href="#aboutme">about me</a>
+                <a class="nav-link" href="#portfolio">portfolio</a>
                 <a class="nav-link" href="#contact">contact</a>
             </nav>
         </div>
@@ -51,75 +51,92 @@
                 <p class="logo-one">C</p>
                 <p class="logo-two">z</p>
                 <nav class="navigation-desktop">
-                    <a class="nav-link one" href="#invest">about me</a>
-                    <a class="nav-link" href="#plan">portfolio</a>
+                    <a class="nav-link one" href="#aboutme">about me</a>
+                    <a class="nav-link" href="#portfolio">portfolio</a>
                     <a class="nav-link" href="#contact">contact</a>
                 </nav>
             </div>
 
         </div>
-
-
-        <div class="header__text">
-            <h1 class="welcome-text"></h1>
-            <p></p>
-        </div>
-
     </header>
 
 
-
     <main>
-        <div class="wrapper">
-            <section class="main">
+
+        <section class="welcome">
+            <div class="wrapper">
+                
+                <div class="welcome-box">
+                    <div class="welcome-text">
+                        <h1>Hi, im Tomasz </h1>
+                        <h2>Welcome on my site.</h2>
+                        <hr>
+                    </div>
+                    <!-- <div class="welcome-img">
+                    </div> -->
+                </div>
+                <a href="#aboutme">
+                    <div class="arrow-box">
+                        <img class="arrow-img" src="./src/img/arrow-down.svg" alt="">
+                    </div>
+                </a>
+            </div>
+        </section>
+
+
+        <section class="aboutme" id="aboutme">
+
+
+        </section>
 
 
 
-            </section>
-        </div>
+
+
+
+
+
+        <section class="contact">
+            <div class="wrapper">
+                <h2 class="section-title">contact</h2>
+                <form action="" class="contact-form">
+                    <div class="form-top">
+                        <div class="form-box top-one">
+                            <label for="name">Your name:</label>
+                            <input type="text" id="name">
+                        </div>
+                        <div class="form-box top-two">
+                            <label for="email">Your email:</label>
+                            <input type="email" id="email">
+                        </div>
+                    </div>
+                    <div class="form-box">
+                        <label for="msg">Message:</label>
+                        <textarea id="msg" cols="30" rows="10"></textarea>
+                    </div>
+                    <button type="button" class="form-btn">Send</button>
+                </form>
+            </div>
+        </section>
+
+
+
+
+
     </main>
 
 
 
-    <section class="contact">
-        <div class="wrapper">
-            <h2 class="section-title">contact</h2>
-
-            <form action="" class="contact-form">
-                <div class="form-top">
-                    <div class="form-box top-one">
-                        <label for="name">Your name:</label>
-                        <input type="text" id="name">
-                    </div>
-                    <div class="form-box top-two">
-                        <label for="email">Your email:</label>
-                        <input type="email" id="email">
-                    </div>
-                </div>
-                <div class="form-box">
-                    <label for="msg">Message:</label>
-                    <textarea id="msg" cols="30" rows="10"></textarea>
-                </div>
-                <button type="submit" class="contact__form-btn">Send</button>
-            </form>
-        </div>
-    </section>
-
-
 
     <footer class="footer">
-        <div class="footer-text">
-            <p class="footer_bottom-text"><span class="footer-year"></span> Tomasz Czerwiński</p>
-        </div>
+        <p class="footer_bottom-text"><span class="footer-year"></span> Tomasz Czerwiński</p>
 
         <div class="logo-box">
             <p class="letter-one">C</p>
             <p class="letter-two">z</p>
         </div>
 
-        <div class="footer-link">
-            <a href="https://github.com/Czerrwiec" target="_blank"><i class="fa-brands fa-github"></i></a>
-        </div>
+        <a href="https://github.com/Czerrwiec" target="_blank"><i class="fa-brands fa-github"></i></a>
     </footer>
 
     <script src="./dist/js/main.min.js"></script>
