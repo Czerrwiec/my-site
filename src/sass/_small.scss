@@ -1,0 +1,53 @@
+@media (max-width: 768px) {
+	header {
+		position: sticky;
+		top: 0;
+		height: 82px;
+
+		.hamburger-navigation-box {
+			display: block;
+		}
+
+		.navigation-box-desktop {
+			display: none;
+		}
+		.image-box-mobile {
+			img {
+				display: block;
+			}
+		}
+	}
+
+	.welcome {
+		.welcome-box {
+			margin-bottom: 10em;
+
+			.welcome-text {
+				font-size: 1.8rem;
+				margin-left: 1em;
+			}
+		}
+	}
+
+	.contact {
+		.contact-form {
+			margin: 1em 1em;
+			// padding: 1em 10em;
+			display: flex;
+			flex-direction: column;
+
+			.form-top {
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+
+				.top-one {
+					padding: 0;
+				}
+				.top-two {
+					padding: 0;
+				}
+			}
+		}
+	}
+}

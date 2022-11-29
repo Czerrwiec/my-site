@@ -1,0 +1,33 @@
+@use './animations' as *;
+
+@media (min-width: 1200px) {
+	.navigation-box-desktop {
+		position: relative;
+	}
+
+	.box {
+		top: 85px;
+		position: absolute;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex-wrap: wrap;
+		max-width: 1200px;
+	}
+
+	.square {
+		height: 12px;
+		width: 12px;
+		// border: 1px solid black;
+		transition-property: background-color;
+		transition-duration: 2s;
+	}
+
+	.square:hover {
+		transition-duration: 0s !important;
+	}
+
+	.animation-rotate {
+		animation: rotate 1.5s linear;
+	}
+}
