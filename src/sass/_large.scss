@@ -1,5 +1,12 @@
 @use './animations' as *;
 
+
+@media (max-width: 1199px) {
+	.box {
+		display: none;
+	}
+}
+
 @media (min-width: 1200px) {
 	.navigation-box-desktop {
 		position: relative;
