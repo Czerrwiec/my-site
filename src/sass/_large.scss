@@ -1,16 +1,10 @@
 @use './animations' as *;
 
-
-@media (max-width: 1199px) {
-	.box {
-		display: none;
-	}
-}
-
 @media (min-width: 1200px) {
 	.navigation-box-desktop {
 		position: relative;
 	}
+
 
 	.box {
 		top: 85px;
@@ -23,8 +17,9 @@
 	}
 
 	.square {
-		height: 12px;
-		width: 12px;
+		margin: 0.07em;
+		height: 32px;
+		width: 32px;
 		// border: 1px solid black;
 		transition-property: background-color;
 		transition-duration: 2s;

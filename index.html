@@ -9,19 +9,17 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Anonymous+Pro:ital@0;1&display=swap" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lexend+Exa:wght@100;200;300;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
     <script src="https://kit.fontawesome.com/b40b53770d.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="./dist/css/hamburger.min.css">
     <link rel="stylesheet" href="./dist/css/main.min.css">
-    <title>My site</title>
+    <title>tomaszczerwinski.pl</title>
 </head>
 
 <body>
 
 
     <header class="header">
-
         <div class="hamburger-navigation-box">
             <button class="hamburger hamburger--collapse" type="button">
                 <span class="hamburger-box">
@@ -29,7 +27,6 @@
                 </span>
             </button>
         </div>
-
         <div class="navigation-box">
             <div class="image-box-mobile">
                 <a href="#"><img src="./dist/img/ES.png" alt="personal logo"></a>
@@ -40,17 +37,11 @@
                 <a class="nav-link" href="#contact">contact</a>
             </nav>
         </div>
-
-
         <div class="wrapper">
-
             <div class="navigation-box-desktop">
                 <div class="image-box">
                     <a href="#"><img src="./dist/img/ES.png" alt="personal logo"></a>
                 </div>
-                <!-- <p class="logo-one">C</p>
-                <p class="logo-two">z</p> -->
-
                 <nav class="navigation-desktop">
                     <a class="nav-link one" href="#aboutme">about me</a>
                     <a class="nav-link" href="#portfolio">portfolio</a>
@@ -59,6 +50,7 @@
             </div>
         </div>
     </header>
+
     <div class="wrapper">
         <div class="box"></div>
     </div>
@@ -67,7 +59,6 @@
 
         <section class="welcome">
             <div class="wrapper">
-
                 <div class="welcome-box">
                     <div class="welcome-text">
                         <h1>Hi, <span>i'm</span> Tomasz </h1>
@@ -88,35 +79,41 @@
 
             <div class="wrapper">
                 <div class="back-img">
-                    
+                    <div class="aboutme-box">
+                        <div class="aboutme-left">
+                            <div class="aboutme-text">
+                                <h3>about me</h3>
+                                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptate, aspernatur
+                                    maxime! Vero et explicabo voluptate repudiandae tenetur error sit nobis possimus
+                                    alias odit sed sunt, suscipit laudantium ipsam mollitia nam similique iste
+                                    aperiam
+                                    modi aspernatur reprehenderit earum libero nostrum vel? Cupiditate eligendi
+                                    dignissimos sunt! Odio deserunt amet quaerat ratione quam laborum sunt quae
+                                    assumenda doloribus? Totam illo neque voluptates nobis? Lorem ipsum dolor sit amet.
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam, provident sit atque
+                                    nam, at dolor veritatis fugit eos numquam saepe illum enim, quibusdam distinctio
+                                    doloribus est rem tenetur maxime! Odio?</p>
+                                </p>
+                            </div>
+                            <div class="aboutme-logo-box">
+                                <div class="aboutme-carousel">
+                                    <div class="slick-component">
 
-                        <div class="aboutme-box">
-                            <div class="aboutme-left">
-                                <div class="aboutme-text">
-                                    <h3>about me</h3>
-                                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptate, aspernatur
-                                        maxime! Vero et explicabo voluptate repudiandae tenetur error sit nobis possimus
-                                        alias odit sed sunt, suscipit laudantium ipsam mollitia nam similique iste
-                                        aperiam
-                                        modi aspernatur reprehenderit earum libero nostrum vel? Cupiditate eligendi
-                                        dignissimos sunt! Odio deserunt amet quaerat ratione quam laborum sunt quae
-                                        assumenda doloribus? Totam illo neque voluptates nobis? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut iure, voluptate veniam impedit doloremque incidunt praesentium totam natus modi culpa?
-                                    </p>
-                                </div>
-                                <div class="aboutme-logo-box">
-                                    <div class="aboutme-carousel">
-                                        <div class="icon-box">
-                                            <i class="fa-brands fa-html5"></i>
-                                            <i class="fa-brands fa-gulp"></i>
-                                            <i class="fa-brands fa-linux"></i>
-                                            <i class="fa-brands fa-ubuntu"></i>
-                                        </div>
+                                        <div class="slick-element"><i class="fa-brands fa-html5"></i></div>
+                                        <div class="slick-element"><i class="fa-brands fa-css3-alt"></i></div>
+                                        <div class="slick-element"><i class="fa-brands fa-js"></i></div>
+                                        <div class="slick-element"><i class="fa-brands fa-bootstrap"></i></div>
+                                        <div class="slick-element"><i class="fa-brands fa-github"></i></div>
+                                        <div class="slick-element"><i class="fa-brands fa-ubuntu"></i></div>
+                                        <!-- <div class="slick-element"><i class="fa-brands fa-gulp"></i></div>                           -->
+
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="front-img"></div>
-                        <div class="shadow"></div>
+                    </div>
+                    <div class="front-img"></div>
+                    <div class="shadow"></div>
                 </div>
             </div>
         </section>
@@ -124,8 +121,6 @@
 
 
         <section class="portfolio">
-
-
 
         </section>
 
@@ -159,7 +154,6 @@
     </main>
 
 
-
     <footer class="footer">
         <div class="footer-top">
             <p class="footer_bottom-text"><span class="footer-year"></span> Tomasz Czerwiński</p>
@@ -168,6 +162,10 @@
         <a href="https://github.com/Czerrwiec" target="_blank"><i class="fa-brands fa-github"></i></a>
     </footer>
 
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script src="./dist/js/slick.min.js"></script>
     <script src="./dist/js/main.min.js"></script>
 </body>
 

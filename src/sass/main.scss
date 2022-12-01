@@ -31,6 +31,10 @@ body {
 	display: none;
 }
 
+.sticky-body {
+	overflow: hidden;
+}
+
 header {
 	background-color: $secondary;
 	border-bottom: 1px solid $main;
@@ -89,7 +93,7 @@ header {
 		background-color: $main;
 		z-index: 10;
 		transform: translateX(-102%);
-		transition: transform 0.6s;
+		transition: transform 0.4s;
 
 		.nav-link {
 			position: relative;
@@ -222,13 +226,11 @@ header {
 }
 
 .aboutme {
-
 	.back-img {
 		position: relative;
-		background-image: url('/dist/img/back1.jpg');
+		background-image: url('/dist/img/IMG20220531144428.jpg');
 		height: 90vh;
 		background-size: cover;
-		// background-position: 0px 0px;
 		background-attachment: fixed;
 		overflow: hidden;
 
@@ -250,14 +252,11 @@ header {
 			right: 0;
 			height: 800px;
 			width: 1350px;
-			background-image: url('/dist/img/Cz2.png');
-			background-image: url('/dist/img/photo.png');
+			background-image: url('/dist/img/IMG_20210612_135742.png');
 			background-size: cover;
 			z-index: 9;
 		}
 	}
-
-
 
 	.aboutme-box {
 		display: flex;
@@ -267,12 +266,12 @@ header {
 			z-index: 20;
 			display: flex;
 			flex-direction: column;
-			margin-left: 1.5em;
-			margin-top: 4em;
-			width: 500px;
+			margin: 0 1em;
+			margin-top: 3em;
+			width: 48%;
 			color: $secondary;
 			h3 {
-				font-size: 2.2rem;
+				font-size: 2.4rem;
 				margin-bottom: 1em;
 			}
 			p {
@@ -281,10 +280,56 @@ header {
 				margin-bottom: 1em;
 			}
 
-			.aboutme-carousel {
-				.icon-box {
-					margin-top: 2em;
-					font-size: 7rem;
+			.aboutme-logo-box {
+				margin-top: 2em;
+				margin-right: 0.5em;
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				align-items: center;
+
+				.aboutme-carousel {
+					width: 90%;
+
+					.slick-component {
+						position: relative;
+						font-size: 7rem;
+
+						.slick-center {
+							transition: transform 0.5s;
+							transform: scale(1.4);
+						}
+
+						i {
+							padding: 0.8em;
+						}
+						.slick-arrow {
+							position: absolute;
+							background: none;
+							top: 50%;
+							transform: translateY(-50%);
+							border: none;
+							font-size: 3.3rem;
+							color: $secondary;
+							padding: 0.05em 0.05em;
+							cursor: pointer;
+							z-index: 50;
+							.fa-angle-left:hover {
+								transition: transform 0.2s;
+								transform: scale(0.8);
+							}
+							.fa-angle-right:hover {
+								transition: transform 0.2s;
+								transform: scale(0.8);
+							}
+						}
+						.slick-prev {
+							left: -20px;
+						}
+						.slick-next {
+							right: -20px;
+						}
+					}
 				}
 			}
 		}
@@ -304,7 +349,6 @@ header {
 .portfolio {
 	height: 100vh;
 }
-
 
 .contact {
 	margin-top: 2em;
