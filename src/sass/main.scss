@@ -1,5 +1,6 @@
 @use './colors' as *;
 @use './animations' as *;
+$num-elements: 11;
 
 *,
 *::after,
@@ -26,10 +27,6 @@ body {
 	margin: 0 auto;
 	max-width: 1200px;
 	width: 100%;
-}
-
-.box {
-	display: none;
 }
 
 .sticky-body {
@@ -179,11 +176,14 @@ header {
 	.welcome-box {
 		margin-bottom: 10em;
 		display: flex;
-
+		// background-color: aquamarine;
+		justify-content: space-around;
+		align-items: center;
 		.welcome-text {
+			margin-left: 4em;
+			padding-bottom: 8em;
 			color: #4a4e69;
 			font-size: 2.2rem;
-			margin-left: 5em;
 			letter-spacing: 0.06em;
 
 			h1 {
@@ -194,6 +194,53 @@ header {
 			}
 			span {
 				letter-spacing: 0;
+			}
+		}
+
+
+		.animation-container {
+			width: 500px;
+			height: 500px;
+			filter: url('#goo');
+			opacity: 0;
+			animation: fade 4s forwards;
+		}
+	
+		.animation-container .circle {
+			position: absolute;
+			width: 140px;
+			height: 140px;
+			border-radius: 50%;
+			background-color: #e10f3b;
+			left: 50%;
+			top: 50%;
+			transform: translate(-50%, -50%);
+		}
+		
+		@for $i from 1 through 11 {
+			$angle:random();
+			.animation-container .dot:nth-child(#{$i}) {
+				position: absolute;
+				width: 40px;
+				height: 40px;
+				background-color: #e10f3b;
+				border-radius: 50%;
+				left: -99999px;
+				right: -99999px;
+				top: -99999px;
+				bottom: -99999px;
+				margin: auto;
+				animation: anim-#{$i} 7s 4s infinite;
+			}
+		
+			@keyframes anim-#{$i} {
+				from {
+					transform: rotate($angle * 360deg) translate(0) rotate($angle * -360deg) scale(random() * 3)
+				}
+		
+				to {
+					transform: rotate($angle * 360deg) translate(200px * random() + 130px) rotate($angle * -360deg) scale(0)
+				}
 			}
 		}
 	}

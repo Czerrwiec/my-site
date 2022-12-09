@@ -6,33 +6,6 @@
 		position: relative;
 	}
 
-	.box {
-		top: 85px;
-		position: absolute;
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		flex-wrap: wrap;
-		max-width: 1200px;
-	}
-
-	.square {
-		margin: 0.07em;
-		height: 32px;
-		width: 32px;
-		// border: 1px solid black;
-		transition-property: background-color;
-		transition-duration: 2s;
-	}
-
-	.square:hover {
-		transition-duration: 0s !important;
-	}
-
-	.animation-rotate {
-		animation: rotate 1.5s linear;
-	}
-
 	.aboutme {
 		.back-img {
 			.shadow {	
