@@ -96,3 +96,90 @@
 		}
 	}
 }
+
+@media (max-width: 900px) {
+	.welcome {
+		.welcome-animation {
+			svg {
+				width: 10px;
+				height: 10px;
+			}
+		}
+		.welcome-box {
+			display: flex;
+			justify-content: space-around;
+			align-items: center;
+			.welcome-text {
+				margin-left: 0.5em;
+				font-size: 1.6rem;
+				letter-spacing: 0em;
+			}
+
+			.animation-container {
+				width: 400px;
+				height: 400px;
+			}
+			.animation-container .circle {
+				position: absolute;
+				width: 100px;
+				height: 100px;
+			}
+			@for $i from 1 through 11 {
+				$angle: random();
+				@keyframes anim-#{$i} {
+					from {
+						transform: rotate($angle * 360deg) translate(0)
+							rotate($angle * -360deg) scale(random() * 2.2);
+					}
+
+					to {
+						transform: rotate($angle * 360deg)
+							translate(180px * random() + 40px) rotate($angle * -360deg)
+							scale(0);
+					}
+				}
+			}
+		}
+	}
+}
+
+@media (max-width: 620px) {
+	.welcome {
+		
+		.welcome-box {
+			display: flex;
+			justify-content: space-around;
+			align-items: center;
+			.welcome-text {
+				margin-left: 0.5em;
+				font-size: 1.6rem;
+				letter-spacing: 0em;
+			}
+
+			.animation-container {
+				width: 200px;
+				height: 200px;
+			}
+			.animation-container .circle {
+				position: absolute;
+				width: 70px;
+				height: 70px;
+			}
+			@for $i from 1 through 11 {
+				$angle: random();
+				@keyframes anim-#{$i} {
+					from {
+						transform: rotate($angle * 360deg) translate(0)
+							rotate($angle * -360deg) scale(random() * 1.6);
+					}
+
+					to {
+						transform: rotate($angle * 360deg)
+							translate(100px * random() + 20px) rotate($angle * -360deg)
+							scale(0);
+					}
+				}
+			}
+		}
+	}
+}

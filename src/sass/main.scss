@@ -176,12 +176,15 @@ header {
 	.welcome-box {
 		margin-bottom: 10em;
 		display: flex;
-		// background-color: aquamarine;
 		justify-content: space-around;
 		align-items: center;
+
+		svg {
+			// display: none;
+			width: 10px;
+			height: 10px;
+		}
 		.welcome-text {
-			margin-left: 4em;
-			padding-bottom: 8em;
 			color: #4a4e69;
 			font-size: 2.2rem;
 			letter-spacing: 0.06em;
@@ -199,8 +202,8 @@ header {
 
 
 		.animation-container {
-			width: 500px;
-			height: 500px;
+			width: 600px;
+			height: 600px;
 			filter: url('#goo');
 			opacity: 0;
 			animation: fade 4s forwards;
