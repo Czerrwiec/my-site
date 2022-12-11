@@ -10,7 +10,6 @@ let carousel;
 let prev;
 let next;
 
-let range = 200;
 let direction = -1;
 
 const main = () => {
@@ -105,6 +104,7 @@ const addPulseAnimation = (e) => {
 		circle.remove();
 	}, 800);
 };
+
 
 const handleCurrentYear = () => {
 	const year = new Date().getFullYear();

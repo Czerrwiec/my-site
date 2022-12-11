@@ -116,11 +116,14 @@
                                 <h3>about me</h3>
                                 <p>Hello, I’m passionate about building things for the web and
                                     I'm literally obsesed with self improvement about it.
-                                    I’ve discovered my passion for the world of web development and the beauty behind building useful websites like the one you will find in this portfolio. I’m now looking for a junior dev position to start my career and learn among professionals.
-                                    I'm focused on creating some projects to my portfolio. I love technology, books and gym.
+                                    I’ve discovered my passion for the world of web development and the beauty behind
+                                    building useful websites like the one you will find in this portfolio. I’m now
+                                    looking for a junior dev position to start my career and learn among professionals.
+                                    I'm focused on creating some projects to my portfolio. I love technology, books and
+                                    gym.
 
-                                    
-                          
+
+
                                 <p class="text-bottom">I am familiar with these technologies and I try to improve myself
                                     every day:</p>
 
@@ -129,21 +132,21 @@
                                 <div class="carousel-container">
 
                                     <div class="carousel">
-                                      <div class="slider">
-                                        <div class="section"><i class="fa-brands fa-html5"></i></div>
-                                        <div class="section"><i class="fa-brands fa-css3-alt"></i></div>
-                                        <div class="section"><i class="fa-brands fa-js"></i></div>
-                                        <div class="section"><i class="fa-brands fa-gulp"></i></div>
-                                        <div class="section"><i class="fa-brands fa-bootstrap"></i></div>
-                                        <div class="section"><i class="fa-brands fa-github"></i></div>
-                                        <div class="section"><i class="fa-brands fa-ubuntu"></i></div>
-                                      </div>
-                                      <div class="controls">
-                                        <span class="arrow prev"><i class="fa-solid fa-caret-left"></i></span>
-                                        <span class="arrow next"><i class="fa-solid fa-caret-right"></i></span>
-                                      </div>
+                                        <div class="slider">
+                                            <div class="section"><i class="fa-brands fa-html5"></i></div>
+                                            <div class="section"><i class="fa-brands fa-css3-alt"></i></div>
+                                            <div class="section"><i class="fa-brands fa-js"></i></div>
+                                            <div class="section"><i class="fa-brands fa-gulp"></i></div>
+                                            <div class="section"><i class="fa-brands fa-bootstrap"></i></div>
+                                            <div class="section"><i class="fa-brands fa-github"></i></div>
+                                            <div class="section"><i class="fa-brands fa-ubuntu"></i></div>
+                                        </div>
+                                        <div class="controls">
+                                            <span class="arrow prev"><i class="fa-solid fa-caret-left"></i></span>
+                                            <span class="arrow next"><i class="fa-solid fa-caret-right"></i></span>
+                                        </div>
                                     </div>
-                                  </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -164,22 +167,29 @@
         <section class="contact" id="contact">
             <div class="wrapper">
                 <h2 class="section-title">contact</h2>
-                <form action="" class="contact-form">
+                <form class="contact-form" ; onsubmit="sendEmail(); reset(); return false">
                     <div class="form-top">
                         <div class="form-box top-one">
                             <label for="name">Your name:</label>
-                            <input type="text" id="name">
+                            <input type="text" id="name" required>
                         </div>
                         <div class="form-box top-two">
                             <label for="email">Your email:</label>
-                            <input type="email" id="email">
+                            <input type="email" id="email" required>
                         </div>
                     </div>
                     <div class="form-box">
-                        <label for="msg">Message:</label>
-                        <textarea id="msg" cols="30" rows="10"></textarea>
+                        <label for="message">Message:</label>
+                        <textarea id="message" cols="30" rows="10"></textarea>
                     </div>
-                    <button type="button" class="form-btn">Send</button>
+                    <button type="submit" class="form-btn">Send</button>
+
+                    <div class="overlay">
+                        <div class="modal">
+                            <p>Message sent succesfully!</p>
+                            <button class="modal-btn">Ok</button>
+                        </div>
+                    </div>
                 </form>
             </div>
         </section>
@@ -196,6 +206,42 @@
         </div>
         <a href="https://github.com/Czerrwiec" target="_blank"><i class="fa-brands fa-github"></i></a>
     </footer>
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+
+    <script>
+        function sendEmail() {
+            Email.send({
+                SecureToken: '7ed7529e-2e0c-4dd3-a81b-e1dcebf9d212',
+                To: 'tomaszczerwinski33@wp.pl',
+                From: 'czerrwiec@gmail.com',
+                Subject: 'New message from tomaszczerwinski.pl',
+                Body:
+                    'Name: ' +
+                    document.getElementById('name').value +
+                    '<br> Email: ' +
+                    document.getElementById('email').value +
+                    '<br> Message: ' +
+                    document.getElementById('message').value,
+            })
+                .then(message)
+                .then(function () {
+                    const modal = document.querySelector('.modal')
+                    const modalBtn = document.querySelector('.modal-btn')
+                    const overlay = document.querySelector('.overlay')
+
+                    modal.style.display = 'flex';
+                    document.body.style.overflow = 'hidden';
+                    overlay.style.display = 'block';
+                    
+                    modalBtn.addEventListener('click', () => {
+                        modal.style.display = 'none'
+                        document.body.style.overflow = "scroll"
+                        overlay.style.display = 'none';
+                    })
+                })
+        }
+    </script>
+
 
     <script src="./dist/js/main.min.js"></script>
 </body>
