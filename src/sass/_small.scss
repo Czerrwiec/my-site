@@ -129,7 +129,7 @@
 				@keyframes anim-#{$i} {
 					from {
 						transform: rotate($angle * 360deg) translate(0)
-							rotate($angle * -360deg) scale(random() * 2.2);
+							rotate($angle * -360deg) scale(random() * 2.4);
 					}
 
 					to {
@@ -145,7 +145,6 @@
 
 @media (max-width: 620px) {
 	.welcome {
-		
 		.welcome-box {
 			display: flex;
 			justify-content: space-around;
@@ -170,13 +169,63 @@
 				@keyframes anim-#{$i} {
 					from {
 						transform: rotate($angle * 360deg) translate(0)
-							rotate($angle * -360deg) scale(random() * 1.6);
+							rotate($angle * -360deg) scale(random() * 1.8);
 					}
 
 					to {
 						transform: rotate($angle * 360deg)
 							translate(100px * random() + 20px) rotate($angle * -360deg)
 							scale(0);
+					}
+				}
+			}
+		}
+	}
+
+	.aboutme {
+		.aboutme-box {
+			.aboutme-left {
+				.aboutme-logo-box {
+					display: flex;
+					flex-direction: column;
+					justify-content: center;
+					align-items: center;
+					height: 150px;
+
+					.carousel-container {
+						width: 95%;
+						margin: 20px auto;
+						height: 200px;
+						.carousel {
+							.slider {
+								display: flex;
+								height: 100%;
+								width: 700%;
+								flex-shrink: 0;
+								transition: transform 0.8s;
+								.section {
+									i {
+										font-size: 10rem;
+									}
+								}
+							}
+							.arrow {
+								position: absolute;
+								top: 40%;
+								font-size: 3rem;
+								transition: transform 0.3s;
+								cursor: pointer;
+								&:hover {
+									transform: scale(0.8);
+								}
+							}
+						}
+					}
+					.prev {
+						left: 1%;
+					}
+					.next {
+						right: 1%;
 					}
 				}
 			}
