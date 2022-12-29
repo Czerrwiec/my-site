@@ -20,9 +20,9 @@
 
     <header class="header">
         <div class="hamburger-navigation-box">
-            <button class="hamburger hamburger--collapse" type="button">
+            <button class="hamburger hamburger--collapse" type="button" data-bind-js="navBtn">
                 <span class="hamburger-box">
-                    <span class="hamburger-inner"></span>
+                    <span class="hamburger-inner" data-bind-js="hamburger"></span>
                 </span>
             </button>
         </div>
@@ -30,10 +30,11 @@
             <div class="image-box-mobile">
                 <a href="#"><img src="./dist/img/ES.png" alt="personal logo"></a>
             </div>
-            <nav class="navigation">
-                <a class="nav-link" href="#aboutme">about me</a>
-                <a class="nav-link" href="#portfolio">portfolio</a>
-                <a class="nav-link" href="#contact">contact</a>
+            <nav class="navigation" data-bind-js="navigation">
+                <a class="nav-link" href="#aboutme" data-bind-js="link1">about me</a>
+                <a class="nav-link" href="#portfolio" data-bind-js="link2">portfolio</a>
+                <a class="nav-link" href="#contact" data-bind-js="link3">contact</a>
+                <a class="nav-link" href="blog.html" data-bind-js="link4">blog</a>
             </nav>
         </div>
         <div class="wrapper">
@@ -45,14 +46,11 @@
                     <a class="nav-link one" href="#aboutme">about me</a>
                     <a class="nav-link" href="#portfolio">portfolio</a>
                     <a class="nav-link" href="#contact">contact</a>
+                    <a class="nav-link" href="blog.html">blog</a>
                 </nav>
             </div>
         </div>
     </header>
-
-    <div class="wrapper">
-        <div class="box"></div>
-    </div>
 
     <main>
 
@@ -69,7 +67,6 @@
                     <div class="welcome-animation">
                         <div class="animation-container">
                             <div class="circle"></div>
-
                             <div class="dot"></div>
                             <div class="dot"></div>
                             <div class="dot"></div>
@@ -93,9 +90,6 @@
                             </defs>
                         </svg>
                     </div>
-
-
-
                 </div>
                 <a href="#aboutme">
                     <div class="arrow-box">
@@ -107,7 +101,6 @@
 
 
         <section class="aboutme" id="aboutme">
-
             <div class="wrapper">
                 <div class="back-img">
                     <div class="aboutme-box">
@@ -131,8 +124,8 @@
                             <div class="aboutme-logo-box">
                                 <div class="carousel-container">
 
-                                    <div class="carousel">
-                                        <div class="slider">
+                                    <div class="carousel" data-bind-js="carousel">
+                                        <div class="slider" data-bind-js="slider">
                                             <div class="section"><i class="fa-brands fa-html5"></i></div>
                                             <div class="section"><i class="fa-brands fa-css3-alt"></i></div>
                                             <div class="section"><i class="fa-brands fa-js"></i></div>
@@ -140,10 +133,11 @@
                                             <div class="section"><i class="fa-brands fa-bootstrap"></i></div>
                                             <div class="section"><i class="fa-brands fa-github"></i></div>
                                             <div class="section"><i class="fa-brands fa-ubuntu"></i></div>
+                                            <div class="section"><i class="fa-brands fa-sass"></i></div>
                                         </div>
                                         <div class="controls">
-                                            <span class="arrow prev"><i class="fa-solid fa-caret-left"></i></span>
-                                            <span class="arrow next"><i class="fa-solid fa-caret-right"></i></span>
+                                            <span class="prev arrow" data-bind-js="prevArrow"><i class="fa-solid fa-caret-left"></i></span>
+                                            <span class="next arrow" data-bind-js="nextArrow"><i class="fa-solid fa-caret-right"></i></span>
                                         </div>
                                     </div>
                                 </div>
@@ -182,7 +176,7 @@
                         <label for="message">Message:</label>
                         <textarea id="message" cols="30" rows="10"></textarea>
                     </div>
-                    <button type="submit" class="form-btn">Send</button>
+                    <button type="submit" class="form-btn" data-bind-js="formBtn">Send</button>
 
                     <div class="overlay">
                         <div class="modal">
@@ -201,7 +195,7 @@
 
     <footer class="footer">
         <div class="footer-top">
-            <p class="footer_bottom-text"><span class="footer-year"></span> Tomasz Czerwiński</p>
+            <p class="footer_bottom-text"><span class="footer-year" data-bind-js="footerYear"></span> Tomasz Czerwiński</p>
             <img src="./dist/img/Cz2.png" alt="">
         </div>
         <a href="https://github.com/Czerrwiec" target="_blank"><i class="fa-brands fa-github"></i></a>

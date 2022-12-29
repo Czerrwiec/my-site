@@ -356,7 +356,7 @@ header {
 						.slider {
 							display: flex;
 							height: 100%;
-							width: 700%;
+							width: 800%;
 							flex-shrink: 0;
 							transition: transform 0.8s;
 							.section {
@@ -391,6 +391,9 @@ header {
 								}
 								.fa-ubuntu {
 									color: #de4815;
+								}
+								.fa-sass {
+									color: #cd6799;
 								}
 							}
 						}

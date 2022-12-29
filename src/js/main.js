@@ -1,114 +1,127 @@
-let nav;
-let navBtn;
-let links;
-let hamburger;
-let footerYear;
-let formBtn;
-let mobileNavigation;
-let slider;
-let carousel;
-let prev;
-let next;
+class MySite {
+	constructor() {
+		this.DOMElems = [];
+		this.navigationLinks = [];
+		this.direction = -1;
+		this.interval = setInterval(this.nextArrowFunction, 2800);
+		this.initApp();
+	}
 
-let direction = -1;
+	initApp = () => {
+		this.prepareDOMElements();
+		this.prepareDOMListeners();
+		this.handleCurrentYear();
+	};
 
-const main = () => {
-	prepareDOMElements();
-	prepareDOMEvents();
-	handleCurrentYear();
-};
+	prepareDOMElements = () => {
+		const elements = Array.from(document.querySelectorAll('[data-bind-js]'));
 
-const prepareDOMElements = () => {
-	nav = document.querySelector('.navigation');
-	navBtn = document.querySelector('.hamburger');
-	links = document.querySelectorAll('.nav-link');
-	hamburger = document.querySelector('.hamburger-inner');
-	footerYear = document.querySelector('.footer-year');
-	formBtn = document.querySelector('.form-btn');
-	mobileNavigation = document.querySelector('.navigation');
-	slider = document.querySelector('.slider');
-	carousel = document.querySelector('.carousel');
-	prev = document.querySelector('.prev');
-	next = document.querySelector('.next');
-};
+		for (const element of elements) {
+			if (
+				element.dataset.bindJs !== 'link1' &&
+				element.dataset.bindJs !== 'link2' &&
+				element.dataset.bindJs !== 'link3'
+			) {
+				this.DOMElems[element.dataset.bindJs] = element;
+			} 
+			else {
+				this.navigationLinks[element.dataset.bindJs] = element;
+			}
+		}
+	};
 
-const prepareDOMEvents = () => {
-	navBtn.addEventListener('click', handleNav);
-	formBtn.addEventListener('click', addPulseAnimation);
-	next.addEventListener('click', nextArrowFunction);
-	prev.addEventListener('click', prevArrowFunction);
-	slider.addEventListener('transitionend', sliderTransitionEnd);
-};
+	prepareDOMListeners = () => {
+		this.DOMElems.navBtn.addEventListener('click', this.handleNav);
+		this.DOMElems.formBtn.addEventListener('click', this.addPulseAnimation);
+		this.DOMElems.nextArrow.addEventListener('click', this.nextA);
+		this.DOMElems.prevArrow.addEventListener('click', this.prevA);
+		this.DOMElems.slider.addEventListener('transitionend', this.sliderTransitionEnd);
+	};
 
-const handleNav = () => {
-	navBtn.classList.toggle('is-active');
-	nav.classList.toggle('navigation--active');
-	document.body.classList.toggle('sticky-body');
+	handleNav = () => {
+		this.DOMElems.navBtn.classList.toggle('is-active');
+		this.DOMElems.navigation.classList.toggle('navigation--active');
+		document.body.classList.toggle('sticky-body');
 
-	links.forEach((item) => {
-		item.addEventListener('click', () => {
-			mobileNavigation.classList.remove('navigation--active');
-			navBtn.classList.remove('is-active');
-			document.body.classList.remove('sticky-body');
+		Object.values(this.navigationLinks).forEach((item) => {
+			item.addEventListener('click', () => {
+				this.DOMElems.navigation.classList.remove('navigation--active');
+				this.DOMElems.navBtn.classList.remove('is-active');
+				document.body.classList.remove('sticky-body');
+			});
 		});
-	});
-};
+	};
 
-const nextArrowFunction = () => {
-	if (direction === 1) {
-		slider.prepend(slider.lastElementChild);
-	}
-	direction = -1;
-	carousel.style.justifyContent = 'flex-start';
-	slider.style.transform = 'translate(-14.28%)';
-};
+	nextArrowFunction = () => {
+		if (this.direction === 1) {
+			this.DOMElems.slider.prepend(this.DOMElems.slider.lastElementChild);
+		}
+		this.direction = -1;
+		this.DOMElems.carousel.style.justifyContent = 'flex-start';
+		this.DOMElems.slider.style.transform = 'translate(-12.5%)';
+	};
 
-const prevArrowFunction = () => {
-	if (direction === -1) {
-		slider.append(slider.firstElementChild);
-		direction = 1;
-	}
-	carousel.style.justifyContent = 'flex-end';
-	slider.style.transform = 'translate(14.28%)';
-};
+	prevArrowFunction = () => {
+		if (this.direction === -1) {
+			this.DOMElems.slider.append(this.DOMElems.slider.firstElementChild);
+			this.direction = 1;
+		}
+		this.DOMElems.carousel.style.justifyContent = 'flex-end';
+		this.DOMElems.slider.style.transform = 'translate(12.5%)';
+	};
 
-const sliderTransitionEnd = () => {
-	if (direction === -1) {
-		slider.append(slider.firstElementChild);
-	} else if (direction === 1) {
-		slider.prepend(slider.lastElementChild);
-	}
+	sliderTransitionEnd = () => {
+		if (this.direction === -1) {
+			this.DOMElems.slider.append(this.DOMElems.slider.firstElementChild);
+		} else if (this.direction === 1) {
+			this.DOMElems.slider.prepend(this.DOMElems.slider.lastElementChild);
+		}
 
-	slider.style.transition = 'none';
-	slider.style.transform = 'translate(0)';
-	setTimeout(() => {
-		slider.style.transition = 'transform 0.8s';
-	});
-};
+		this.DOMElems.slider.style.transition = 'none';
+		this.DOMElems.slider.style.transform = 'translate(0)';
+		setTimeout(() => {
+			this.DOMElems.slider.style.transition = 'transform 0.8s';
+		});
+	};
 
-const addPulseAnimation = (e) => {
-	const top = e.clientY;
-	const left = e.clientX;
+	addPulseAnimation = (e) => {
+		const top = e.clientY;
+		const left = e.clientX;
+	
+		const btnTopPosition = top - e.target.getBoundingClientRect().top;
+		const btnLeftPosition = left - e.target.offsetLeft;
+	
+		const circle = document.createElement('span');
+		circle.classList.add('circle');
+	
+		e.target.appendChild(circle);
+		circle.style.top = btnTopPosition + 'px';
+		circle.style.left = btnLeftPosition + 'px';
+	
+		setTimeout(() => {
+			circle.remove();
+		}, 800);
+	};
 
-	const btnTopPosition = top - e.target.getBoundingClientRect().top;
-	const btnLeftPosition = left - e.target.offsetLeft;
+	nextA = () => {
+		this.nextArrowFunction();
+		this.resetInterval();
+	};
+	
+	prevA = () => {
+		this.prevArrowFunction();
+		this.resetInterval();
+	};
+	
+	resetInterval = () => {
+		clearInterval(this.interval);
+		this.interval = setInterval(this.nextArrowFunction, 2800);
+	};
 
-	const circle = document.createElement('span');
-	circle.classList.add('circle');
+	handleCurrentYear = () => {
+		const year = new Date().getFullYear();
+		this.DOMElems.footerYear.innerText = year;
+	};
+}
 
-	e.target.appendChild(circle);
-	circle.style.top = btnTopPosition + 'px';
-	circle.style.left = btnLeftPosition + 'px';
-
-	setTimeout(() => {
-		circle.remove();
-	}, 800);
-};
-
-
-const handleCurrentYear = () => {
-	const year = new Date().getFullYear();
-	footerYear.innerText = year;
-};
-
-document.addEventListener('DOMContentLoaded', main);
+document.addEventListener('DOMContentLoaded', new MySite());
