@@ -4,6 +4,7 @@ class MySite {
 		this.navigationLinks = [];
 		this.direction = -1;
 		this.interval = setInterval(this.nextArrowFunction, 2800);
+		this.dotsInterval = setInterval(this.handleDots, 300);
 		this.initApp();
 	}
 
@@ -23,8 +24,7 @@ class MySite {
 				element.dataset.bindJs !== 'link3'
 			) {
 				this.DOMElems[element.dataset.bindJs] = element;
-			} 
-			else {
+			} else {
 				this.navigationLinks[element.dataset.bindJs] = element;
 			}
 		}
@@ -33,9 +33,13 @@ class MySite {
 	prepareDOMListeners = () => {
 		this.DOMElems.navBtn.addEventListener('click', this.handleNav);
 		this.DOMElems.formBtn.addEventListener('click', this.addPulseAnimation);
+		this.DOMElems.formBtn.addEventListener('submit', this.handleModal);
 		this.DOMElems.nextArrow.addEventListener('click', this.nextA);
 		this.DOMElems.prevArrow.addEventListener('click', this.prevA);
-		this.DOMElems.slider.addEventListener('transitionend', this.sliderTransitionEnd);
+		this.DOMElems.slider.addEventListener(
+			'transitionend',
+			this.sliderTransitionEnd
+		);
 	};
 
 	handleNav = () => {
@@ -87,17 +91,17 @@ class MySite {
 	addPulseAnimation = (e) => {
 		const top = e.clientY;
 		const left = e.clientX;
-	
+
 		const btnTopPosition = top - e.target.getBoundingClientRect().top;
 		const btnLeftPosition = left - e.target.offsetLeft;
-	
+
 		const circle = document.createElement('span');
 		circle.classList.add('circle');
-	
+
 		e.target.appendChild(circle);
 		circle.style.top = btnTopPosition + 'px';
 		circle.style.left = btnLeftPosition + 'px';
-	
+
 		setTimeout(() => {
 			circle.remove();
 		}, 800);
@@ -107,12 +111,12 @@ class MySite {
 		this.nextArrowFunction();
 		this.resetInterval();
 	};
-	
+
 	prevA = () => {
 		this.prevArrowFunction();
 		this.resetInterval();
 	};
-	
+
 	resetInterval = () => {
 		clearInterval(this.interval);
 		this.interval = setInterval(this.nextArrowFunction, 2800);
@@ -122,6 +126,30 @@ class MySite {
 		const year = new Date().getFullYear();
 		this.DOMElems.footerYear.innerText = year;
 	};
+
+	handleDots = () => {
+		if ((this.DOMElems.dot.innerHTML += '.').length == 4) {
+			this.DOMElems.dot.innerHTML = ''
+		}
+	};
+
+	handleModal = (e) => {
+		e.preventDefault();
+		const modal = document.querySelector('.modal')
+		const modalBtn = document.querySelector('.modal-btn')
+		const overlay = document.querySelector('.overlay')
+	
+		modal.style.display = 'flex';
+		document.body.style.overflow = 'hidden';
+		overlay.style.display = 'block';
+	
+		modalBtn.addEventListener('click', () => {
+			modal.style.display = 'none'
+			document.body.style.overflow = "scroll"
+			overlay.style.display = 'none';
+		})
+	}
 }
+
 
 document.addEventListener('DOMContentLoaded', new MySite());

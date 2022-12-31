@@ -10,9 +10,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Anonymous+Pro:ital@0;1&display=swap" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <script src="https://kit.fontawesome.com/b40b53770d.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="./dist/css/hamburger.min.css">
     <link rel="stylesheet" href="./dist/css/main.min.css">
-    <title>tomaszczerwinski.pl</title>
+    <title>tomasz-czerwinski.pl</title>
 </head>
 
 <body>
@@ -31,9 +30,9 @@
                 <a href="#"><img src="./dist/img/ES.png" alt="personal logo"></a>
             </div>
             <nav class="navigation" data-bind-js="navigation">
-                <a class="nav-link" href="#aboutme" data-bind-js="link1">about me</a>
+                <a class="nav-link" href="#aboutme" data-bind-js="link1">o mnie</a>
                 <a class="nav-link" href="#portfolio" data-bind-js="link2">portfolio</a>
-                <a class="nav-link" href="#contact" data-bind-js="link3">contact</a>
+                <a class="nav-link" href="#contact" data-bind-js="link3">kontakt</a>
                 <a class="nav-link" href="blog.html" data-bind-js="link4">blog</a>
             </nav>
         </div>
@@ -43,9 +42,9 @@
                     <a href="#"><img src="./dist/img/ES.png" alt="personal logo"></a>
                 </div>
                 <nav class="navigation-desktop">
-                    <a class="nav-link one" href="#aboutme">about me</a>
+                    <a class="nav-link one" href="#aboutme">o mnie</a>
                     <a class="nav-link" href="#portfolio">portfolio</a>
-                    <a class="nav-link" href="#contact">contact</a>
+                    <a class="nav-link" href="#contact">kontakt</a>
                     <a class="nav-link" href="blog.html">blog</a>
                 </nav>
             </div>
@@ -58,8 +57,7 @@
             <div class="wrapper">
                 <div class="welcome-box">
                     <div class="welcome-text">
-                        <h1>Hi, <span>I'm</span> Tomasz </h1>
-                        <h2>Welcome!</h2>
+                        <h1>Witaj!</h1>
                         <hr>
                     </div>
 
@@ -93,7 +91,7 @@
                 </div>
                 <a href="#aboutme">
                     <div class="arrow-box">
-                        <img class="arrow-img" src="./src/img/arrow-down.svg" alt="">
+                        <img class="arrow-img" src="./dist/img/arrow-down.svg" alt="">
                     </div>
                 </a>
             </div>
@@ -106,20 +104,11 @@
                     <div class="aboutme-box">
                         <div class="aboutme-left">
                             <div class="aboutme-text">
-                                <h3>about me</h3>
-                                <p>Hello, I’m passionate about building things for the web and
-                                    I'm literally obsesed with self improvement about it.
-                                    I’ve discovered my passion for the world of web development and the beauty behind
-                                    building useful websites like the one you will find in this portfolio. I’m now
-                                    looking for a junior dev position to start my career and learn among professionals.
-                                    I'm focused on creating some projects to my portfolio. I love technology, books and
-                                    gym.
+                                <h3>o mnie</h3>
+                                <p>Od lat interesowałem się komputerami i technologią, niestety do tej pory moje wybory zawodowe i edukacyjne nie pokrywały się z pasjami. Obecnie postawiłem wszystko na jedną kartę i cały swój czas poświęcam na rozwój osobisty i naukę. Uwielbiam książki i sport, szczególnie siłownie oraz futsal. W życiu złożyłem kilkadziesiąt PC-tów, więc kontakt z technologią był mocno hardwarowy i rozrywkowy. Dzisiaj z przyjemnością przychodzi mi zgłębianie strony softwarowej, natomiast na premierę nowych radeonów czekam jak wcześniej ;)</p>
 
 
-
-                                <p class="text-bottom">I am familiar with these technologies and I try to improve myself
-                                    every day:</p>
-
+                                <p class="text-bottom">Jestem zaznajomiony z technologiami poniżej, codziennie staram się rozwijać i dokładać nowe. Następne w kolejce jest Node.js oraz React.js.</p>
                             </div>
                             <div class="aboutme-logo-box">
                                 <div class="carousel-container">
@@ -136,8 +125,10 @@
                                             <div class="section"><i class="fa-brands fa-sass"></i></div>
                                         </div>
                                         <div class="controls">
-                                            <span class="prev arrow" data-bind-js="prevArrow"><i class="fa-solid fa-caret-left"></i></span>
-                                            <span class="next arrow" data-bind-js="nextArrow"><i class="fa-solid fa-caret-right"></i></span>
+                                            <span class="prev arrow" data-bind-js="prevArrow"><i
+                                                    class="fa-solid fa-caret-left"></i></span>
+                                            <span class="next arrow" data-bind-js="nextArrow"><i
+                                                    class="fa-solid fa-caret-right"></i></span>
                                         </div>
                                     </div>
                                 </div>
@@ -152,7 +143,14 @@
 
 
 
-        <section class="portfolio">
+        <section class="portfolio" id="portfolio">
+
+            <div class="text">
+                <p class="paragraph">W przygotowaniu<span data-bind-js="dot">.</span></p>
+                <p>Tymczasem zapraszam na <a href="https://github.com/Czerrwiec" target="_blank"><i class="fa-brands fa-github"></i></a></p>
+
+            </div>
+
 
         </section>
 
@@ -160,23 +158,23 @@
 
         <section class="contact" id="contact">
             <div class="wrapper">
-                <h2 class="section-title">contact</h2>
-                <form class="contact-form" ; onsubmit="sendEmail(); reset(); return false">
+                <h2 class="section-title">kontakt</h2>
+                <form id="contact-form" class="contact-form" method="post" action="contactFormHandler.php">
                     <div class="form-top">
                         <div class="form-box top-one">
-                            <label for="name">Your name:</label>
-                            <input type="text" id="name" required>
+                            <label for="name">Twoje imię:</label>
+                            <input name="name" type="text" id="name" required>
                         </div>
                         <div class="form-box top-two">
-                            <label for="email">Your email:</label>
-                            <input type="email" id="email" required>
+                            <label for="email">Twój email:</label>
+                            <input name="email" type="email" id="email" required>
                         </div>
                     </div>
                     <div class="form-box">
-                        <label for="message">Message:</label>
-                        <textarea id="message" cols="30" rows="10"></textarea>
+                        <label for="message">Wiadomość:</label>
+                        <textarea name="message" id="message" cols="30" rows="10"></textarea>
                     </div>
-                    <button type="submit" class="form-btn" data-bind-js="formBtn">Send</button>
+                    <button type="submit" class="form-btn" data-bind-js="formBtn" value="SEND MESSAGE">Wyślij</button>
 
                     <div class="overlay">
                         <div class="modal">
@@ -195,47 +193,12 @@
 
     <footer class="footer">
         <div class="footer-top">
-            <p class="footer_bottom-text"><span class="footer-year" data-bind-js="footerYear"></span> Tomasz Czerwiński</p>
+            <p class="footer_bottom-text"><span class="footer-year" data-bind-js="footerYear"></span> Tomasz Czerwiński
+            </p>
             <img src="./dist/img/Cz2.png" alt="">
         </div>
         <a href="https://github.com/Czerrwiec" target="_blank"><i class="fa-brands fa-github"></i></a>
     </footer>
-    <script src="https://smtpjs.com/v3/smtp.js"></script>
-
-    <script>
-        function sendEmail() {
-            Email.send({
-                SecureToken: '7ed7529e-2e0c-4dd3-a81b-e1dcebf9d212',
-                To: 'tomaszczerwinski33@wp.pl',
-                From: 'czerrwiec@gmail.com',
-                Subject: 'New message from tomaszczerwinski.pl',
-                Body:
-                    'Name: ' +
-                    document.getElementById('name').value +
-                    '<br> Email: ' +
-                    document.getElementById('email').value +
-                    '<br> Message: ' +
-                    document.getElementById('message').value,
-            })
-                .then(message)
-                .then(function () {
-                    const modal = document.querySelector('.modal')
-                    const modalBtn = document.querySelector('.modal-btn')
-                    const overlay = document.querySelector('.overlay')
-
-                    modal.style.display = 'flex';
-                    document.body.style.overflow = 'hidden';
-                    overlay.style.display = 'block';
-                    
-                    modalBtn.addEventListener('click', () => {
-                        modal.style.display = 'none'
-                        document.body.style.overflow = "scroll"
-                        overlay.style.display = 'none';
-                    })
-                })
-        }
-    </script>
-
 
     <script src="./dist/js/main.min.js"></script>
 </body>

@@ -16,6 +16,13 @@
 				display: block;
 			}
 		}
+		.navigation-blog {
+			display: flex;
+		}
+	}
+
+	header .navigation-blog .navigation-desktop .nav-link, header .navigation-box-desktop .navigation-desktop .nav-link {
+		margin: 0 0.6em;
 	}
 
 	.welcome {
@@ -149,6 +156,7 @@
 			display: flex;
 			justify-content: space-around;
 			align-items: center;
+			padding-left: 0;
 			.welcome-text {
 				margin-left: 0.5em;
 				font-size: 1.6rem;
@@ -180,6 +188,8 @@
 				}
 			}
 		}
+
+		
 	}
 
 	.aboutme {
@@ -200,7 +210,7 @@
 							.slider {
 								display: flex;
 								height: 100%;
-								width: 700%;
+								width: 800%;
 								flex-shrink: 0;
 								transition: transform 0.8s;
 								.section {
@@ -230,5 +240,30 @@
 				}
 			}
 		}
+	}
+
+	.error {
+		h1 {
+			font-size: 5rem;
+		}
+		p {
+			padding-top: 0.2em;
+			font-size: 2.2rem;
+		}
+		a {
+			padding: .3em .7em;
+		}
+	}
+
+
+	.aboutme .aboutme-box .aboutme-left .aboutme-logo-box .carousel-container {
+		padding-top: 0em;
+		width: 100%;
+		margin: 20px auto;
+		height: 250px;
+	}
+
+	.aboutme .aboutme-box .aboutme-left .aboutme-logo-box {
+		margin: 0;
 	}
 }
