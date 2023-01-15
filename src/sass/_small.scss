@@ -148,6 +148,12 @@
 			}
 		}
 	}
+
+	.portfolio .cards-container {
+		justify-content: center;
+	}
+
+
 }
 
 @media (max-width: 620px) {
@@ -210,7 +216,7 @@
 							.slider {
 								display: flex;
 								height: 100%;
-								width: 800%;
+								width: 900%;
 								flex-shrink: 0;
 								transition: transform 0.8s;
 								.section {
@@ -265,5 +271,30 @@
 
 	.aboutme .aboutme-box .aboutme-left .aboutme-logo-box {
 		margin: 0;
+	}
+
+	.portfolio .text {
+		top: 45%;
+		left: 50%;
+	}
+
+	.portfolio .links a {
+		padding: 0.9em 0;
+		font-size: 1.4rem;
+	}
+
+	.portfolio .cards-container .card {
+		position: relative;
+		margin: 1em 0;
+		min-width: 380px;
+		height: 320px;
+	}
+	.portfolio .cards-container .card .card-shadow {
+		transform: translateY(0%);
+		font-size: 1.4rem;
+
+		a {
+			font-size: 1.4rem;
+		}
 	}
 }

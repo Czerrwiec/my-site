@@ -357,7 +357,7 @@ header {
 						.slider {
 							display: flex;
 							height: 100%;
-							width: 800%;
+							width: 900%;
 							flex-shrink: 0;
 							transition: transform 0.8s;
 							.section {
@@ -396,6 +396,9 @@ header {
 								.fa-sass {
 									color: #cd6799;
 								}
+								.fa-npm {
+									color: #cb3837;
+								}
 							}
 						}
 						.arrow {
@@ -432,33 +435,116 @@ header {
 
 .portfolio {
 	position: relative;
-	height: 100vh;
+	padding: 3em 1em;
+	text-align: center;
 
-	.text {
-		width: 300px;
-		position: absolute;
-		top: 40%;
-		left: 50%;
-		transform: translate(-50%,-50%);
+	h3 {
+		margin-bottom: 2em;
+		font-weight: 400;
+		font-size: 3rem;
 		color: $main;
-		font-size: 2rem;
-		line-height: 50px;
-		// text-align: center;
+	}
+	
+	.cards-container {
+		display: flex;
+		justify-content: space-between;
+		flex-wrap: wrap;
+		width: 100%;
+		
+		.card {
+			position: relative;
+			margin: 1em;
+			width: 45%;
+			min-width: 450px;
+			height: 400px;
+			box-shadow: rgba(34, 34, 59, 0.334) 0px 1px 4px;
+			transition: transform 0.4s, box-shadow 0.4s;
+			overflow: hidden;
 
-		i {
-			margin-left: 0.2em;
-			font-size: 3rem;
-			color: $main;
-			transition: transform 0.4s;
 			&:hover {
-				transform: scale(1.3);
+				// transform: scale(1.005);
+				box-shadow: rgba(34, 34, 59, 0.818) 0px 1px 4px;
+			}
+			
+			.card-shadow {
+				position: relative;
+				display: flex;
+				justify-content: center;
+				bottom: 0;
+				left: 0;
+				height: 32%;
+				width: 100%;
+				padding: 0.5em 1em;
+				background-color: rgba(34, 34, 59, 0.9);
+				position: absolute;
+				transform: translateY(100%);
+				transition: transform 0.3s;
+
+				p {
+					margin-top: 1em;
+					color: $secondary;
+					line-height: 130%;
+				}
+
+				a {
+					position: absolute;
+					padding: 0.6em 0.8em;
+					text-decoration: none;
+					color: $secondary;
+					right: 15px;
+					bottom: 15px;
+					font-size: 1.6rem;
+					transition: background-color 0.4s;
+					
+					&:hover {
+						background-color: rgba(34, 34, 59, 0.85);
+					}
+				}
+			}
+
+			.image {
+				width: 100%;
+				height: 100%;
+				background-size: cover;
+				background-repeat: no-repeat;
+			}
+			.image-one {
+				background-image: url('/dist/img/Screenshot1.jpg');
+			}
+
+			.image-two {
+				background-image: url('/dist/img/Screenshot2.jpg');
+			}
+
+			.image-third {
+				background-image: url('/dist/img/Screenshot3.jpg');
+			}
+
+			.image-fourth {
+				background-image: url('/dist/img/Screenshot4.jpg');
+				background-size: 125%;
+				background-position: center;
+			}
+
+			.image-fifth {
+				background-image: url('/dist/img/Screenshot5.jpg');
 			}
 		}
+	}
 
-		.paragraph {
-			position: absolute;
-			bottom: 50px;
-			left: 50px;
+	.ending-paragraph {
+		font-size: 2rem;
+		color: $main;
+		margin-top: 3em;
+		padding-bottom: 11em;
+		a {
+			text-decoration: none;
+			color: $main;
+			transition: color 0.4s;
+			i {
+				margin-top: 0.3em;
+				font-size: 3rem;
+			}
 		}
 	}
 }
@@ -559,6 +645,21 @@ header {
 
 	button {
 		margin-top: 2em;
+		position: relative;
+		align-self: center;
+		margin-bottom: 1em;
+		padding: 0.9em 2.1em;
+		border: 1px solid $main;
+		background: none;
+		font-weight: bold;
+		color: $main;
+		overflow: hidden;
+		cursor: pointer;
+		transition: background-color 0.5s, color 0.5s;
+		&:hover {
+			color: $secondary;
+			background-color: $main;
+		}
 	}
 }
 
@@ -622,9 +723,7 @@ footer {
 	}
 }
 
-
 //ERROR 404////////////////////////////////
-
 
 .error {
 	height: 100vh;
@@ -632,8 +731,9 @@ footer {
 	background-size: cover;
 	background-position: center;
 	text-align: center;
-	
-	h1, p {
+
+	h1,
+	p {
 		padding-top: 0.6em;
 		color: #000;
 		z-index: 20;
@@ -653,20 +753,18 @@ footer {
 		margin-top: 0.8em;
 		color: #000;
 		transition: background-color 0.4s, color 0.4s;
-		
+
 		&:hover {
 			background-color: #000;
-			color: white
+			color: white;
 		}
 	}
 }
-
 
 ///////BLOG////////////////////////////////
 
 .navigation-blog {
 	@extend .navigation-box-desktop;
-
 }
 
 .banner {
@@ -682,7 +780,7 @@ footer {
 	height: 100vh;
 	background-color: white;
 	color: $main;
-	
+
 	h2 {
 		padding-top: 2em;
 		text-align: center;
@@ -690,8 +788,6 @@ footer {
 		font-size: 2.7rem;
 	}
 }
-
-
 
 // >>>>>> MEDIA >>>>>>
 

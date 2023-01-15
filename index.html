@@ -10,13 +10,13 @@
     <link href="https://fonts.googleapis.com/css2?family=Anonymous+Pro:ital@0;1&display=swap" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <script src="https://kit.fontawesome.com/b40b53770d.js" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <link rel="shortcut icon" href="./dist/img/favicon.ico" />
     <link rel="stylesheet" href="./dist/css/main.min.css">
     <title>tomasz-czerwinski.pl</title>
 </head>
 
 <body>
-
-
     <header class="header">
         <div class="hamburger-navigation-box">
             <button class="hamburger hamburger--collapse" type="button" data-bind-js="navBtn">
@@ -61,8 +61,7 @@
                         <hr>
                     </div>
 
-
-                    <div class="welcome-animation">
+                    <div class="welcome-animation" data-bind-js="animation">
                         <div class="animation-container">
                             <div class="circle"></div>
                             <div class="dot"></div>
@@ -97,7 +96,6 @@
             </div>
         </section>
 
-
         <section class="aboutme" id="aboutme">
             <div class="wrapper">
                 <div class="back-img">
@@ -105,10 +103,18 @@
                         <div class="aboutme-left">
                             <div class="aboutme-text">
                                 <h3>o mnie</h3>
-                                <p>Od lat interesowałem się komputerami i technologią, niestety do tej pory moje wybory zawodowe i edukacyjne nie pokrywały się z pasjami. Obecnie postawiłem wszystko na jedną kartę i cały swój czas poświęcam na rozwój osobisty i naukę. Uwielbiam książki i sport, szczególnie siłownie oraz futsal. W życiu złożyłem kilkadziesiąt PC-tów, więc kontakt z technologią był mocno hardwarowy i rozrywkowy. Dzisiaj z przyjemnością przychodzi mi zgłębianie strony softwarowej, natomiast na premierę nowych radeonów czekam jak wcześniej ;)</p>
+                                <p>Od zawsze interesowałem się komputerami i technologią, niestety do tej pory moje
+                                    wybory
+                                    zawodowe i edukacyjne nie pokrywały się z pasjami. Obecnie postawiłem wszystko na
+                                    jedną kartę i cały swój czas poświęcam na rozwój osobisty i naukę. W życiu złożyłem
+                                    kilkadziesiąt PC-tów,
+                                    więc kontakt z technologią był mocno hardwarowy i raczej rozrywkowy. Dzisiaj z
+                                    przyjemnością przychodzi mi zgłębianie strony softwarowej, natomiast na premierę
+                                    nowych radeonów czekam jak wcześniej ;)</p>
 
 
-                                <p class="text-bottom">Jestem zaznajomiony z technologiami poniżej, codziennie staram się rozwijać i dokładać nowe. Następne w kolejce jest Node.js oraz React.js.</p>
+                                <p class="text-bottom">Jestem zaznajomiony z technologiami poniżej, codziennie staram
+                                    się rozwijać i dokładać nowe. Następny w kolejce jest React.js.</p>
                             </div>
                             <div class="aboutme-logo-box">
                                 <div class="carousel-container">
@@ -123,6 +129,7 @@
                                             <div class="section"><i class="fa-brands fa-github"></i></div>
                                             <div class="section"><i class="fa-brands fa-ubuntu"></i></div>
                                             <div class="section"><i class="fa-brands fa-sass"></i></div>
+                                            <div class="section"><i class="fa-brands fa-npm"></i></div>
                                         </div>
                                         <div class="controls">
                                             <span class="prev arrow" data-bind-js="prevArrow"><i
@@ -141,25 +148,57 @@
             </div>
         </section>
 
-
-
         <section class="portfolio" id="portfolio">
+            <div class="wrapper">
+                <h3>portfolio</h3>
+                <div class="cards-container">
+                    <div class="card">
+                        <div class="image image-one"></div>
+                        <div class="card-shadow">
+                            <p>W pełni responsywny przykładowy layout dla sklepu odzieżowego.</p>
+                            <a href="https://czerrwiec.github.io/ecommerce-shop-website/" target="_blank">otwórz</a>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="image image-two"></div>
+                        <div class="card-shadow">
+                            <p>Strona firmy geodezyjnej Azymut.</p>
+                            <a href="https://czerrwiec.github.io/azymut-website-no-bootstrap/" target="_blank">otwórz</a>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="image image-third"></div>
+                        <div class="card-shadow">
+                            <p>Przykładowy landing page stworzony przy pomocy bootstrapa.</p>
+                            <a href="https://czerrwiec.github.io/bootstrap-site/" target="_blank">otwórz</a>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="image image-fourth"></div>
+                        <div class="card-shadow">
+                            <p>Aplikacja, w której sprawdzisz ocenę filmu w trzech najpopularniejszych serwisach.</p>
+                            <a href="https://tomasz-czerwinski.pl/movieApp.html" target="_blank">otwórz</a>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="image image-fifth"></div>
+                        <div class="card-shadow">
+                            <p>Gra, dzięki której zaczniesz szybciej pisać i zapoznasz się z cytatami znanych ludzi :)</p>
+                            <a href="https://tomasz-czerwinski.pl/movieApp.html" target="_blank">otwórz</a>
+                        </div>
+                    </div>
+                </div>
 
-            <div class="text">
-                <p class="paragraph">W przygotowaniu<span data-bind-js="dot">.</span></p>
-                <p>Tymczasem zapraszam na <a href="https://github.com/Czerrwiec" target="_blank"><i class="fa-brands fa-github"></i></a></p>
-
+                <p class="ending-paragraph">Po więcej zapraszam na githuba. <a href="https://github.com/Czerrwiec" target="_blank"><i class="fa-brands fa-github"></i></a></p>
+                
             </div>
-
-
         </section>
-
-
 
         <section class="contact" id="contact">
             <div class="wrapper">
                 <h2 class="section-title">kontakt</h2>
-                <form id="contact-form" class="contact-form" method="post" action="contactFormHandler.php">
+                <form id="contact-form" class="contact-form" method="post" action="contactFormHandler.php"
+                    data-bind-js="form">
                     <div class="form-top">
                         <div class="form-box top-one">
                             <label for="name">Twoje imię:</label>
@@ -176,20 +215,16 @@
                     </div>
                     <button type="submit" class="form-btn" data-bind-js="formBtn" value="SEND MESSAGE">Wyślij</button>
 
-                    <div class="overlay">
-                        <div class="modal">
-                            <p>Message sent succesfully!</p>
-                            <button class="modal-btn">Ok</button>
-                        </div>
-                    </div>
                 </form>
+                <div class="overlay">
+                    <div class="modal">
+                        <p>Wiadomość została wysłana!</p>
+                        <button class="modal-btn">Ok</button>
+                    </div>
+                </div>
             </div>
         </section>
-
-
-
     </main>
-
 
     <footer class="footer">
         <div class="footer-top">

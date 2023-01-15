@@ -4,7 +4,6 @@ class MySite {
 		this.navigationLinks = [];
 		this.direction = -1;
 		this.interval = setInterval(this.nextArrowFunction, 2800);
-		this.dotsInterval = setInterval(this.handleDots, 300);
 		this.initApp();
 	}
 
@@ -33,7 +32,6 @@ class MySite {
 	prepareDOMListeners = () => {
 		this.DOMElems.navBtn.addEventListener('click', this.handleNav);
 		this.DOMElems.formBtn.addEventListener('click', this.addPulseAnimation);
-		this.DOMElems.formBtn.addEventListener('submit', this.handleModal);
 		this.DOMElems.nextArrow.addEventListener('click', this.nextA);
 		this.DOMElems.prevArrow.addEventListener('click', this.prevA);
 		this.DOMElems.slider.addEventListener(
@@ -62,7 +60,7 @@ class MySite {
 		}
 		this.direction = -1;
 		this.DOMElems.carousel.style.justifyContent = 'flex-start';
-		this.DOMElems.slider.style.transform = 'translate(-12.5%)';
+		this.DOMElems.slider.style.transform = 'translate(-11.111%)';
 	};
 
 	prevArrowFunction = () => {
@@ -71,7 +69,7 @@ class MySite {
 			this.direction = 1;
 		}
 		this.DOMElems.carousel.style.justifyContent = 'flex-end';
-		this.DOMElems.slider.style.transform = 'translate(12.5%)';
+		this.DOMElems.slider.style.transform = 'translate(11.111%)';
 	};
 
 	sliderTransitionEnd = () => {
@@ -127,29 +125,23 @@ class MySite {
 		this.DOMElems.footerYear.innerText = year;
 	};
 
-	handleDots = () => {
-		if ((this.DOMElems.dot.innerHTML += '.').length == 4) {
-			this.DOMElems.dot.innerHTML = ''
-		}
-	};
-
-	handleModal = (e) => {
-		e.preventDefault();
-		const modal = document.querySelector('.modal')
-		const modalBtn = document.querySelector('.modal-btn')
-		const overlay = document.querySelector('.overlay')
-	
-		modal.style.display = 'flex';
-		document.body.style.overflow = 'hidden';
-		overlay.style.display = 'block';
-	
-		modalBtn.addEventListener('click', () => {
-			modal.style.display = 'none'
-			document.body.style.overflow = "scroll"
-			overlay.style.display = 'none';
-		})
-	}
+	// handleDots = () => {
+	// 	if ((this.DOMElems.dot.innerHTML += '.').length == 4) {
+	// 		this.DOMElems.dot.innerHTML = '';
+	// 	}
+	// };
 }
+
+
+const cards = document.querySelectorAll('.card');
+cards.forEach(card => {
+	card.addEventListener('mouseover', () => {
+		card.children[1].style.transform = 'translateY(0%)';
+	})
+	card.addEventListener('mouseout', () => {
+		card.children[1].style.transform = 'translateY(100%)'
+	})
+})
 
 
 document.addEventListener('DOMContentLoaded', new MySite());
